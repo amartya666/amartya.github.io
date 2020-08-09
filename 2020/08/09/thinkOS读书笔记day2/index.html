@@ -17,7 +17,7 @@
   <meta name="description" content="尽吾志也">
   <meta name="author" content="Amartya">
   <meta name="keywords" content="">
-  <title>操作系统第一天 - Amartyaのblog</title>
+  <title>thinkOS for the first day - Amartyaのblog</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
 
@@ -160,8 +160,8 @@
               
   <div class="mt-3 post-meta">
     <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-    <time datetime="2020-08-07 17:00" pubdate>
-      August 7, 2020 pm
+    <time datetime="2020-08-09 00:00" pubdate>
+      August 9, 2020 am
     </time>
   </div>
 
@@ -171,7 +171,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      751 字
+      931 字
     </span>
   
 
@@ -181,7 +181,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      8
+      18
        分钟
     </span>
   
@@ -211,31 +211,68 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto" id="post">
             <!-- SEO header -->
-            <h1 style="display: none">操作系统第一天</h1>
+            <h1 style="display: none">thinkOS for the first day</h1>
             
             <div class="markdown-body" id="post-body">
-              <h1 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h1><h2 id="what："><a href="#what：" class="headerlink" title="what："></a>what：</h2><p>操作系统在计算机中充当着大管家的角色。将计算资源分配给不同的用户程序使用。</p>
-<h2 id="why："><a href="#why：" class="headerlink" title="why："></a>why：</h2><p>1 从开发角度来看：服务端开发，Unix-like OS占比近70%；客户端开发，安卓基于linux内核</p>
-<p>2 从应用生态的角度来看：云计算，容器，大数据等技术都是基于linux</p>
-<p>3 linux作为产品，本身提供了数据结构和设计模式的最佳实践。比如文件操作，涉及到分层机制。</p>
-<p>4 自己的观点：要想开发性能优秀的程序，就需要对操作系统有深入理解。</p>
-<h2 id="how："><a href="#how：" class="headerlink" title="how："></a>how：</h2><p>1 结合故事的方式</p>
-<p>2 结合图解</p>
-<h2 id="where-you-are-what-is-your-goal"><a href="#where-you-are-what-is-your-goal" class="headerlink" title="where you are ?  what is your goal ?"></a>where you are ?  what is your goal ?</h2><p><a target="_blank" rel="noopener" href="https://time.geekbang.org/column/article/87111">点击测试以下自己的水平</a></p>
-<p>The test will provide you a underlying knowledge network.</p>
-<p>This course will help you how to achieve your goal and become better.</p>
-<h2 id="The-Path-to-Master-Linux"><a href="#The-Path-to-Master-Linux" class="headerlink" title="The Path to Master Linux:"></a>The Path to Master Linux:</h2><p>会当凌绝顶，一览众山小。</p>
-<p>step1：抛弃旧习惯，熟练使用命令行。tools：《鸟哥私房菜》</p>
-<p>美丽的风景：例如一些很有技巧的命令 sed 和 awk、很神奇的正则表达式、灵活的管道和 grep、强大的 bash。你可以自动化地做一些事情了，例如处理一些数据，会比你使用 Excel 要又快又准，关键是不用框框点点，在后台就能完成一系列操作。在处理数据的同时，你还可以干别的事情，半夜处理数据，第二天早上发个邮件报告，这都是 Excel 很难做到的事情</p>
-<p>step2：通过系统调用或者 glibc，学会自己进行程序设计。tools：《UNIX 环境高级编程》</p>
-<p>你平时用的一个简单的命令行，却需要 N 个系统调用组合才能完成。其中每个系统调用都要进行深入地学习、读文档、做实验。</p>
-<p>step3：了解 Linux 内核机制，反复研习重点突破。（重点）tools： 《深入理解 LINUX 内核》</p>
-<p>Linux 内核机制也非常复杂，而且其中相互关联。比如说，进程运行要分配内存，内存映射涉及文件的关联，文件的读写需要经过块设备，从文件中加载代码才能运行起来进程。这些知识点要反复对照，才能理清。</p>
-<p>step4： 阅读 Linux 内核代码，聚焦核心逻辑和场景</p>
-<p>当你在工作中需要重点研究某方面技术的时候，如果涉及内核，这个时候仅仅了解原理已经不够了，你需要看这部分的代码。你就可以有针对性地去做课题，把所学和你现在做的东西结合起来重点突破。例如你是研究虚拟化的，就重点看 KVM 的部分；如果你是研究网络的，就重点看内核协议栈的部分。</p>
-<p>step5： </p>
-<h2 id="目标拆解："><a href="#目标拆解：" class="headerlink" title="目标拆解："></a>目标拆解：</h2><p>linux可以分为几个功能模块：</p>
-<p>进程管理；内存管理；文件系统；网络；设备</p>
+              <h2 id="Preface："><a href="#Preface：" class="headerlink" title="Preface："></a>Preface：</h2><p>If this book is successful, it should give you a better understanding of what is happening when programs run, and what you can do to make them run better and faster.</p>
+<h2 id="chapter-2-Processes"><a href="#chapter-2-Processes" class="headerlink" title="chapter 2 Processes"></a>chapter 2 Processes</h2><h3 id="2-1-Abstraction-and-virtualization"><a href="#2-1-Abstraction-and-virtualization" class="headerlink" title="2.1 Abstraction and virtualization"></a>2.1 Abstraction and virtualization</h3><ul>
+<li>Abstraction: An abstraction is a simplified representation of something<br>complicated.</li>
+<li>Virtualization: An important kind of abstraction is virtualization, which is the process of creating a desirable illusion. In the context of virtualization, we sometimes call what is really happening “physical”, and what is virtually happening either “logical” or “abstract”.</li>
+</ul>
+<h3 id="2-2-Isolation"><a href="#2-2-Isolation" class="headerlink" title="2.2 Isolation"></a>2.2 Isolation</h3><p>when you are designing a system with multiple components, it is usually a good idea to isolate them from each other so that a change in one component doesn’t have undesired effects on other components. One of the most important goals of an operating system is to isolate each running program from the others.</p>
+<p>The software object that provides this isolation is a process.</p>
+<p>A process is a software object that represents a running program.</p>
+<p>A process is an object that contains the following data:</p>
+<ul>
+<li>The text of the program, usually a sequence of machine language instructions.</li>
+<li>Data associated with the program, including static data (allocated at compile time) and dynamic data (allocated at run time).</li>
+<li>The state of any pending input/output operations.</li>
+<li>The hardware state of the program.</li>
+</ul>
+<p>Usually one process runs one program, but it is also possible for a process to<br>load and run a new program. </p>
+<p>It is also possible, and common, to run the same program in more than one process. In that case, the processes share the same program text but generally have different data and hardware states.</p>
+<p>Most operating systems provide a fundamental set of capabilities to isolate processes from each other:</p>
+<ul>
+<li>Multitasking. interrupt a running process at almost any time, save its hardware state, and then resume the process later</li>
+<li>Virtual memory. create the illusion that each process has its own chunk of memory, isolated from all other processes.\</li>
+<li>Device abstraction. It is up to the operating system to maintain order by providing appropriate abstractions.</li>
+</ul>
+<p>comments: I never thought it is so hard for two processes to communicate with each other. Now I realized that they should be isolated from each other.</p>
+<h3 id="2-3-Unix-processes"><a href="#2-3-Unix-processes" class="headerlink" title="2.3 Unix processes"></a>2.3 Unix processes</h3><p>kthreadd     kworker     ksoftirqd</p>
+<h2 id="chapter-3-Virtual-memory"><a href="#chapter-3-Virtual-memory" class="headerlink" title="chapter 3 Virtual memory"></a>chapter 3 Virtual memory</h2><h3 id="3-1-A-bit-of-information-theory"><a href="#3-1-A-bit-of-information-theory" class="headerlink" title="3.1 A bit of information theory"></a>3.1 A bit of information theory</h3><p>A bit is a binary digit; it is also a unit of information.</p>
+<p>Suppose I flip a coin and tell you the outcome. I have given you one bit of information. If I roll a six-sided die and tell you the outcome, I have given you log6 bits of information. And in general, if the probability of the outcome is p, then the information content is -logp.</p>
+<p>This quantity is called the self-information of the outcome. It measures how surprising the outcome is, which is why it is also called surprisal.</p>
+<p>Intuitively, unexpected news carries a lot of information; conversely, if there<br>is something you were already condent of, confirming it contributes only a<br>small amount of information.</p>
+<h3 id="3-2-Memory-and-storage"><a href="#3-2-Memory-and-storage" class="headerlink" title="3.2 Memory and storage"></a>3.2 Memory and storage</h3><p>the difference between main memory and hard disk drives： volatile nonvolatile</p>
+<p>also the read and write way is different.</p>
+<h3 id="3-3-Address-spaces"><a href="#3-3-Address-spaces" class="headerlink" title="3.3 Address spaces"></a>3.3 Address spaces</h3><p>In general, a process cannot access data belonging to another process, because there is no virtual address it can generate that maps to physical memory allocated to another process.</p>
+<h3 id="3-4-Memory-segments"><a href="#3-4-Memory-segments" class="headerlink" title="3.4 Memory segments"></a>3.4 Memory segments</h3><p>The data of a running process is organized into five segments:</p>
+<ul>
+<li>The code segment contains the program text; that is, the machine<br>language instructions that make up the program.</li>
+<li>The static segment contains immutable values, like string literals. For<br>example, if your program contains the string “Hello, World”, those<br>characters will be stored in the static segment.</li>
+<li>The global segment contains global variables and local variables that<br>are declared static.</li>
+<li>The heap segment contains chunks of memory allocated at run time,<br>most often by calling the C library function malloc.</li>
+<li>The stack segment contains the call stack, which is a sequence of stack<br>frames.</li>
+</ul>
+<p>The arrangement of these segments is determined partly by the compiler and<br>partly by the operating system.</p>
+<h3 id="3-5-Static-local-variables"><a href="#3-5-Static-local-variables" class="headerlink" title="3.5 Static local variables"></a>3.5 Static local variables</h3><ol>
+<li>Local variables on the stack</li>
+<li>allocated in the global segment</li>
+</ol>
+<h3 id="3-6-Address-translation"><a href="#3-6-Address-translation" class="headerlink" title="3.6 Address translation"></a>3.6 Address translation</h3><p>VA——&gt;page number and the offset (MMU)——&gt;</p>
+<p>looks up the page number in TLB——&gt;PA</p>
+<p>The TLB contains cached copies of data from the page table (which is stored in kernel memory). The page table contains the mapping from virtual page numbers to physical page numbers.</p>
+<p>Since each process has its own page table, the TLB has to make sure it only uses entries from the page table of the process that’s running.</p>
+<p>But the fundamental idea is that page tables are sparse, so we have to choose a good implementation for sparse arrays.</p>
+<ul>
+<li>One option is a multilevel page table, which is what many operating systems,<br>including Linux, use.</li>
+<li>Another option is an associative table, where each entry includes both the virtual page number and the physical page number.</li>
+</ul>
+<p>the operating system can interrupt a running process, save its state, and then run another process. This mechanism is called a context switch. Since each process has its own page table, the operating system has to work with the MMU to make sure each process gets the right page table.</p>
+<ul>
+<li>In older machines, the page table information in the MMU had to be replaced during every context switch, which was expensive.</li>
+<li>In newer systems, each page table entry in the MMU includes the process ID, so page tables from multiple processes can be in the MMU at the same time.</li>
+</ul>
 
             </div>
             <hr>
@@ -266,9 +303,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2020/08/07/20200629_Cpp/">
+                      <a href="/2020/08/09/thinkOS%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0day1/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">面经知识点总结</span>
+                        <span class="hidden-mobile">thinkOS for the first day</span>
                         <span class="visible-mobile">Previous</span>
                       </a>
                     
@@ -276,8 +313,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/08/07/OS_day2_Linux%E7%BB%BC%E8%BF%B0/">
-                        <span class="hidden-mobile">操作系统第一天</span>
+                      <a href="/2020/08/08/20200808-effective%20java28%2029/">
+                        <span class="hidden-mobile"></span>
                         <span class="visible-mobile">Next</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -383,7 +420,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "操作系统第一天&nbsp;",
+        "thinkOS for the first day&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 70,
